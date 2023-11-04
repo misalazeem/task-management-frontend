@@ -10,7 +10,7 @@ function useUser() {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/users/me", {
+      const response = await fetch(process.env.REACT_APP_API_USER_URL, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

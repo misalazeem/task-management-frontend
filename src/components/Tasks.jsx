@@ -44,17 +44,17 @@ const Tasks = () => {
     refetch();
   };
 
-  const filteredTasks = tasks
-    ? tasks.filter((task) => {
-        if (filterStatus === 'All') {
-          return true;
-        } else if (filterStatus === 'To Do') {
-          return !task.completed;
-        } else if (filterStatus === 'Done') {
-          return task.completed;
-        }
-      })
-    : [];
+  const filteredTasks = isLoading ? [] : tasks.filter((task) => {
+    if (filterStatus === 'All') {
+        return true;
+      } else if (filterStatus === 'To Do') {
+        return !task.completed;
+      } else if (filterStatus === 'Done') {
+        return task.completed;
+      } else {
+        return false;
+      }
+  });
 
   if (isLoading) {
     return <p>Loading...</p>;

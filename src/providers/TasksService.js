@@ -68,4 +68,5 @@ class TasksService {
   }
 }
 
+// eslint-disable-next-line
 export default new TasksService();

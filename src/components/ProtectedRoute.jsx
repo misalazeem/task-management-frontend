@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import useProtectedRoute from "../customHooks/useProtectedRoute";
 
 const ProtectedRoute = () => {
-  const { data, error, isLoading } = useProtectedRoute();
+  const { error, isLoading } = useProtectedRoute();
 
   if (isLoading) {
     return <p>Loading...</p>;

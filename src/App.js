@@ -7,6 +7,7 @@ import Dashboard from "./routes/Dashboard";
 import Signup from "./routes/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Logout from "./routes/Logout";
+import NoMatch from "./routes/NoMatch";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => {
             <Route path='/dashboard' element={ <Dashboard /> } />
             <Route path='/logout' element={ <Logout /> } />
           </Route>
+          <Route path="*" element={<NoMatch />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
